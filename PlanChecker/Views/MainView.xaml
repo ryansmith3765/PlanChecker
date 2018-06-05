@@ -8,11 +8,19 @@
         xmlns:local="clr-namespace:PlanChecker.Views"
         mc:Ignorable="d"
         Title="MainView" Height="300" Width="300" Icon="../Resources/esapix.png">
-    <Grid>
+    <Grid Background="#FFD39B59">
+        <DockPanel>
         <!--EXAMPLE DATA BIND-->
-        <TextBlock TextAlignment="Center" FontSize="14">
+        <!--<TextBlock TextAlignment="Center" FontSize="14">
             <Run Text="{Binding Username}" FontWeight="Bold" />
             <Run Text=" is currently logged in"/>
-        </TextBlock>
+        </TextBlock> -->
+            <TextBlock Text="Plans" DockPanel.Dock="Top" Padding="5"/>
+            <TextBlock Text="{Binding Result}" DockPanel.Dock="Bottom"/>
+
+            <Button Content="Press me" Command="{Binding ButtonCommand}" DockPanel.Dock="Bottom" Padding="5" Margin="5"></Button>
+            <ListBox ItemsSource="{Binding Plans}" SelectedItem="{Binding SelectedPlan}" DockPanel.Dock="Bottom" Margin="5"></ListBox>
+            
+        </DockPanel>
     </Grid>
 </Window>
